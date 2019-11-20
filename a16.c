@@ -11,7 +11,7 @@ int main()
 	scanf("%d,%d,%d",p1,p2,p3);
 	max(p1,p2);
 	max(p2,p3);
-	max(p1,p3);
+	max(p1,p2);
 	printf("%3d%3d%3d",a,b,c);
 	
 
