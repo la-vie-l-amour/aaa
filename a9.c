@@ -22,7 +22,7 @@ int main()
 	 to++;
 	}
 }*/
-/*void copy_string(char *from,char *to);
+/*void copy_string(char *from,char *to)
 {
 	//while((*to++=*from++)!='\0');
 	//while(*to++=*from++);
