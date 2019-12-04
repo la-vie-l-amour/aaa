@@ -1,19 +1,66 @@
 #include<stdio.h>
 #include<stdlib.h>
 void print(struct Stu* d);
+struct Stu* del(struct Stu*h,int age);
+struct Stu * creat();
 struct Stu
-	{
-		int num;
-		char name[20];
-		char sex;
-		int age;
-		struct Stu* next;
-	
-	};
-int main()
 {
-	struct Stu *head,*p,*q,*m;
-	int n=0,a;
+	int num;
+	char name[20];
+	char sex;
+	int age;
+	struct Stu* next;	
+};
+void main()
+{
+	int a;
+	struct Stu *pt;
+	pt=creat();
+	print(pt);
+	printf("please enter the age:");
+	scanf("%d",&a);
+	print(del(pt,a));
+
+	
+}
+void print(struct Stu *d)
+{
+	struct Stu *p;
+	p=d;
+	while(p->next!=NULL)
+	{
+		printf("%d\t%s\t%c\t%d\t\n",p->num,p->name,p->sex,p->age);
+		p=p->next;
+	}
+}
+struct Stu* del(struct Stu *h,int age)
+{
+	struct Stu *p,*q;
+	q=p=h;	
+	if(h->age==age)
+	   h=p->next;
+	else
+	{	p=p->next;
+	    	while(p!=NULL)		
+	  	{ 
+	    		if(p->age==age)
+	    		q->next=p->next;
+
+	  		else
+			{
+		 		q=p;
+		 		p=p->next;
+			}
+		}
+		    
+	}
+	return(h);
+	
+}
+struct Stu * creat()
+{
+	struct Stu *head,*p,*q;
+	int n=0;
 	p=(struct Stu *)malloc(sizeof(struct Stu));
 	q=p;
 	head=NULL;
@@ -32,43 +79,7 @@ int main()
 		scanf("%d %s %c %d",&p->num,p->name,&p->sex,&p->age);
 		
 	}
-	free()
-	p->next=NULL;
-	m=q=p=head;
-	while(p->next!=NULL)
-	   print(head);
-	printf("please enter the age:");
-	   scanf("%d",&a);
-	
-	if(head->age==a)
-	  { head=p->next;
-            print(head);
-	  }
-	else
-	{ 
-	   while(p->next!=NULL)		
-	  { q=p->next;
-	    m=q->next; 
-	    if(q->age==a)
-		m=p->next;
-	    else p=m->next;
-	   }
-	   print(head);
-	}
+	free(p);
+	q->next=NULL;
+	return(head);
 }
-void print(struct Stu *d)
-{
-	struct Stu *p;
-	p=d;
-	while(p->next!=NULL)
-	{printf("%d\t%s\t%c\t%d\t\n",p->num,p->name,p->sex,p->age);
-	 p=p->next;
-	}
-}	
-     
-	
-	
-	
-	
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-
