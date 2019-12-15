@@ -22,6 +22,7 @@ float fun(float a,float b,float (*p)(float))
 	h=(b-a)/n;
 	for(i=1;i<=n;i++)
 	{	x=x+h;
+		//s=s+((*p)(x-h)+(*p)(x))*h/2.0;
 		s=s+(*p)(x)*h;
 	}
 	return s;
