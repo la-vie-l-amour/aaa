@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main()
 {
-	char i,j,k;
-	for(i='x';i<='z';i++)
-	   for(j='x';j<='z'&&j!='i';j++)
-		for(k='x';k<='z'&&k!='i'&&k!='j';k++)
-		{	i!='x';
-			k!='x';
-			k!='z';
-		}
 
-	printf("a--%d b--%d c--%d",i,j,k);
+	
+	char i,j,k;
+	for(i='X';i<='Z';i++)
+	     for(j='X';j<='Z';j++)
+		if(i!=j)
+		     for(k='X';k<='Z';k++)
+			if(k!=i&&k!=j)
+			    if(i!='X'&&k!='X'&&k!='Z')
+			          printf("A--%c\nB--%c\nC--%c\n",i,j,k);
 }
